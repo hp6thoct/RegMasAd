@@ -61,15 +61,16 @@ const AddCourseModal = ({
 
   const onFinish = async (values) => {
     const formData = {
-      capacity: values.capacity,
+      capacity: Number(values.capacity),
       room: values.room,
-      schoolYear: values.schoolYear,
-      semester: values.semester,
-      startDate: values.startDate.format("YYYY-MM-DD HH:mm:ss"),
+      schoolYear: Number(values.schoolYear),
+      semester: Number(values.semester),
+      startDate: values.startDate.format(), // Use default format with timezone information
       time: values.time,
       instructor: instructors[values.instructor_id],
       subject: subjects[values.subject_id],
     };
+    
     console.log(formData)
     try {
       if (editCourse) {

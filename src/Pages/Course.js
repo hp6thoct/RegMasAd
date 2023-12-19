@@ -24,7 +24,7 @@ const CourseManagement = () => {
 
   useEffect(() => {
     fetchCourses();
-  }, []);
+  }, [selectedYear, selectedSemester]);
 
   const handleAddCourse = () => {
     setAddNewCourse(true);
